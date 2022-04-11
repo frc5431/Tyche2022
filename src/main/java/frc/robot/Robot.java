@@ -1,41 +1,43 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
-
+/**
+  @author Aahana Shrivastava
+  */
 package frc.robot;
 
-import edu.wpi.first.wpilibj.Joystick;
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.motorcontrol.MotorController;
-import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
+import frc.team5431.titan.core.joysticks.Xbox;
 
-/**
- * This is a demo program showing the use of the DifferentialDrive class, specifically it contains
- * the code necessary to operate a robot with tank drive.
- */
 public class Robot extends TimedRobot {
   private DifferentialDrive m_myRobot;
-  private Joystick m_leftStick;
-  private Joystick m_rightStick;
+  private Xbox driver;
+  private Xbox operator;
+  Math power;
 
-  private final MotorController m_leftMotor = new PWMSparkMax(3);
-  private final MotorController m_rightMotor = new PWMSparkMax(2);
-
+  private final CANSparkMax m_leftMotor1 = new CANSparkMax(1, MotorType.kBrushless);
+  private final CANSparkMax m_rightMotor1 = new CANSparkMax(2, MotorType.kBrushless);
+  private final CANSparkMax m_leftMotor2 = new CANSparkMax(3, MotorType.kBrushless);
+  private final CANSparkMax m_rightMotor2 = new CANSparkMax(4, MotorType.kBrushless);
+  
   @Override
   public void robotInit() {
-    // We need to invert one side of the drivetrain so that positive voltages
-    // result in both sides moving forward. Depending on how your robot's
-    // gearbox is constructed, you might have to invert the left side instead.
-    m_rightMotor.setInverted(true);
+  
+    m_rightMotor1.setInverted(true);
+    m_rightMotor2.follow(m_rightMotor1);
+    m_leftMotor1.setInverted(true);
+    m_leftMotor2.follow(m_leftMotor1);
 
-    m_myRobot = new DifferentialDrive(m_leftMotor, m_rightMotor);
-    m_leftStick = new Joystick(0);
-    m_rightStick = new Joystick(1);
+    m_myRobot = new DifferentialDrive(m_leftMotor1, m_rightMotor1);
+    driver = new Xbox(0);
+    operator = new Xbox(1);
+
   }
 
   @Override
   public void teleopPeriodic() {
-    m_myRobot.tankDrive(m_leftStick.getY(), m_rightStick.getY());
+    m_myRobot.arcadeDrive(driver.getRawAxis(Xbox.Axis.LEFT_Y), driver.getRawAxis(Xbox.Axis.LEFT_X));
+   
+  
   }
 }

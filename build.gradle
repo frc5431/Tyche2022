@@ -45,6 +45,13 @@ wpi.java.debugJni = false
 // Set this to true to enable desktop support.
 def includeDesktopSupport = false
 
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
 // Defining my dependencies. In this case, WPILib (+ friends), and vendor libraries.
 // Also defines JUnit 4.
 dependencies {
@@ -66,6 +73,7 @@ dependencies {
     simulationRelease wpi.sim.enableRelease()
 
     testImplementation 'junit:junit:4.13.1'
+    implementation 'com.github.frc5431:TitanUtil:2022.4.1.0' //Replace tag with the latest release if needed
 }
 
 // Simulation configuration (e.g. environment variables).
