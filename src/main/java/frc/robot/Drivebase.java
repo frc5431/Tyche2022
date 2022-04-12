@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import frc.team5431.titan.core.joysticks.Xbox;
 
-public class Robot extends TimedRobot {
+public class Drivebase extends TimedRobot {
   private DifferentialDrive m_myRobot;
   private Xbox driver;
   private Xbox operator;
