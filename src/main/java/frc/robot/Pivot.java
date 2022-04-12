@@ -1,35 +1,34 @@
 package frc.robot;
 
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMax.SoftLimitDirection;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import frc.team5431.titan.core.joysticks.LogitechExtreme3D; 
 
+import static java.lang.Math.max;
+import static java.lang.Math.min;
 /**
  * @author Aahana Shrivastava
  */
 public class Pivot {
-        private CANSparkMax pivotMotor;
+        private VictorSPX pivotMotor;
 
     public static final double PIVOT_DOWN_LIMIT = -42000; // -45k // -49k
     public static final double PIVOT_UP_LIMIT = 0;
 
-public Pivot(CANSparkMax pivotMotor) {
-    this.pivotMotor = pivotMotor;
-    this.pivotMotor.enableSoftLimit(SoftLimitDirection.kForward, true);
-    this.pivotMotor.enableSoftLimit(SoftLimitDirection.kReverse, true);
-    this.pivotMotor.setSoftLimit(SoftLimitDirection.kForward, 100);
-    this.pivotMotor.setSoftLimit(SoftLimitDirection.kReverse, 100);
+public Pivot(VictorSPX pivotMotor) {
+    this.pivotMotor.configForwardSoftLimitEnable(true);
+    this.pivotMotor.configForwardSoftLimitThreshold(max(PIVOT_UP_LIMIT, PIVOT_DOWN_LIMIT));
+    this.pivotMotor.configReverseSoftLimitEnable(true);
+    this.pivotMotor.configReverseSoftLimitThreshold(min(PIVOT_UP_LIMIT, PIVOT_DOWN_LIMIT));
 
 }
 
 public void calibrateMode(boolean value) {
-    this.pivotMotor.enableSoftLimit(SoftLimitDirection.kForward, !value);
-    this.pivotMotor.enableSoftLimit(SoftLimitDirection.kReverse, !value);
+    this.pivotMotor.configForwardSoftLimitEnable(!value);
+    this.pivotMotor.configReverseSoftLimitEnable(!value);
 }
 
 public void reset() {
-    this.pivotMotor.getEncoder().setPosition(0);
+    this.pivotMotor.setSelectedSensorPosition(0);
 }
 
 }
