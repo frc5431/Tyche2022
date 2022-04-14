@@ -1,6 +1,3 @@
-/**
-  @author Aahana Shrivastava
-  */
 package frc.robot;
 
 import com.revrobotics.CANSparkMax;
@@ -9,6 +6,10 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import frc.team5431.titan.core.joysticks.Xbox;
 
+ /**
+  @author Aahana Shrivastava
+   */
+  
 public class Drivebase extends TimedRobot {
   private DifferentialDrive m_myRobot;
   private Xbox driver;
