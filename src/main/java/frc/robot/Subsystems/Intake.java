@@ -1,13 +1,14 @@
-package frc.robot;
+package frc.robot.Subsystems;
 
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.revrobotics.CANSparkMax;
-import edu.wpi.first.wpilibj.TimedRobot;
+
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
  /**
   @author Aahana Shrivastava
    */
-public class Intake extends TimedRobot {
+public class Intake extends SubsystemBase{
 
     public static final double DEFAULT_SPEED = 1.0;
     public static final boolean REVERSE = false;

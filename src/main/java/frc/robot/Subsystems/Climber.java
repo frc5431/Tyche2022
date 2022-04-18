@@ -1,4 +1,4 @@
-package frc.robot;
+package frc.robot.Subsystems;
 
 public class Climber {
     
