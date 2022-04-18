@@ -17,10 +17,10 @@ public class Drivebase extends TimedRobot {
   private Xbox operator;
   Math power;
 
-  private final CANSparkMax m_leftMotor1 = new CANSparkMax(1, MotorType.kBrushless);
+  private final CANSparkMax m_leftMotor1 = new CANSparkMax(3, MotorType.kBrushless);
   private final CANSparkMax m_rightMotor1 = new CANSparkMax(2, MotorType.kBrushless);
-  private final CANSparkMax m_leftMotor2 = new CANSparkMax(3, MotorType.kBrushless);
-  private final CANSparkMax m_rightMotor2 = new CANSparkMax(4, MotorType.kBrushless);
+  private final CANSparkMax m_leftMotor2 = new CANSparkMax(5, MotorType.kBrushless);
+  private final CANSparkMax m_rightMotor2 = new CANSparkMax(11, MotorType.kBrushless);
   
   @Override
   public void robotInit() {
