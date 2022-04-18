@@ -4,6 +4,8 @@ import com.ctre.phoenix.motorcontrol.TalonFXInvertType;
 import com.ctre.phoenix.motorcontrol.can.TalonFXConfiguration;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPXConfiguration;
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMax.SoftLimitDirection;
 
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
@@ -28,6 +30,14 @@ public class Constants {
     public static final double KF = 0; 
  
     public static final ShuffleboardTab tab_subsystems = Shuffleboard.getTab("Subsystems");
+    public static final SoftLimitDirection FORWARD_DIRECTION = SoftLimitDirection.kForward;
+    public static final SoftLimitDirection REVERSE_DIRECTION = SoftLimitDirection.kReverse;
+
+        
+    public static final int EXTEND_DOWN_LIMIT = 0;
+    public static final int EXTEND_UP_LIMIT = 0;
+    public static final int HINGE_CLOSE_LIMIT = 0;
+    public static final int HINGE_OPEN_LIMIT = 0;
 
     }
 
