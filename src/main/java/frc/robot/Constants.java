@@ -4,6 +4,10 @@ import com.ctre.phoenix.motorcontrol.TalonFXInvertType;
 import com.ctre.phoenix.motorcontrol.can.TalonFXConfiguration;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPXConfiguration;
+
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
+
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.TalonFXControlMode;
@@ -21,11 +25,10 @@ public class Constants {
     public static final double KP = 0;
     public static final double KI = 0;
     public static final double KD = 0;
-    public static final double KF = 0;
+    public static final double KF = 0; 
+ 
+    public static final ShuffleboardTab tab_subsystems = Shuffleboard.getTab("Subsystems");
 
-    public static final ControlMode Velocity = null;
-    public static final String tab_subsystems = null;
-    public static final String addNumber = null;
     }
 
 

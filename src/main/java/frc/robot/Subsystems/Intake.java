@@ -15,6 +15,8 @@ public class Intake extends SubsystemBase{
     public static final NeutralMode NEUTRALMODE = NeutralMode.Coast;
     public static final double RAMPING_FROM_0_TO_FULL = 0.0; // 0.5
 
+    
+
     private CANSparkMax intakeMotor;
 
     public Intake(CANSparkMax motor) {

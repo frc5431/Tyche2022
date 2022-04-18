@@ -8,6 +8,11 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
+
+ /**
+  @author Aahana Shrivastava
+   */
+
 public class Shooter extends SubsystemBase  {
     private WPI_TalonFX shooter, shooterFollow;
 
