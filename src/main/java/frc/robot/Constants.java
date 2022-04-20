@@ -38,6 +38,9 @@ public class Constants {
     public static final int EXTEND_UP_LIMIT = 0;
     public static final int HINGE_CLOSE_LIMIT = 0;
     public static final int HINGE_OPEN_LIMIT = 0;
+    public static final double CAMERA_HEIGHT_METERS = 0;
+    public static final double TARGET_HEIGHT_METERS = 0;
+    public static final double CAMERA_PITCH_RADIANS = 0;
 
     }
 

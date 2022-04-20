@@ -14,6 +14,7 @@ import frc.robot.Constants;
    */
 
 public class Shooter extends SubsystemBase  {
+    public static final double VELOCITY_NORMAL = 0;
     private WPI_TalonFX shooter, shooterFollow;
 
     public Shooter(WPI_TalonFX left, WPI_TalonFX right) {
