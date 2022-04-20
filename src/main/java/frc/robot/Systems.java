@@ -14,5 +14,17 @@ public class Systems {
         return null;
     }
 
+    public Feeder getFeeder() {
+        return null;
+    }
+
+    public DigitalInput getUpperFeederSensor() {
+        return null;
+    }
+
+    public Intake getIntake() {
+        return null;
+    }
+
 }
 
