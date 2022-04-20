@@ -19,8 +19,8 @@ public class Drivebase extends TimedRobot {
 
   private final CANSparkMax m_leftMotor1 = new CANSparkMax(3, MotorType.kBrushless);
   private final CANSparkMax m_rightMotor1 = new CANSparkMax(2, MotorType.kBrushless);
-  private final CANSparkMax m_leftMotor2 = new CANSparkMax(5, MotorType.kBrushless);
-  private final CANSparkMax m_rightMotor2 = new CANSparkMax(11, MotorType.kBrushless);
+  private final CANSparkMax m_leftMotor2 = new CANSparkMax(11, MotorType.kBrushless);
+  private final CANSparkMax m_rightMotor2 = new CANSparkMax(5, MotorType.kBrushless);
   
   @Override
   public void robotInit() {
@@ -30,7 +30,7 @@ public class Drivebase extends TimedRobot {
     m_leftMotor1.setInverted(true);
     m_leftMotor2.follow(m_leftMotor1);
 
-    m_myRobot = new DifferentialDrive(m_leftMotor1, m_rightMotor1);
+    // m_myRobot = new DifferentialDrive(m_leftMotor1, m_rightMotor1);
     driver = new Xbox(0);
     operator = new Xbox(1);
 
@@ -38,8 +38,9 @@ public class Drivebase extends TimedRobot {
 
   @Override
   public void teleopPeriodic() {
-    m_myRobot.arcadeDrive(driver.getRawAxis(Xbox.Axis.LEFT_Y), driver.getRawAxis(Xbox.Axis.LEFT_X));
-   
+    // m_myRobot.arcadeDrive(driver.getRawAxis(Xbox.Axis.LEFT_Y), driver.getRawAxis(Xbox.Axis.LEFT_X));
+    m_leftMotor1.set(driver.getRawAxis(Xbox.Axis.LEFT_Y));
+    m_rightMotor1.set(driver.getRawAxis(Xbox.Axis.RIGHT_Y));
   
   }
 }
