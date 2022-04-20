@@ -1,4 +1,4 @@
-package frc.robot.Util;
+package frc.robot.util;
 
 import org.photonvision.PhotonCamera;
 import org.photonvision.PhotonUtils;
@@ -7,8 +7,8 @@ import org.photonvision.targeting.PhotonPipelineResult;
 import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.math.util.Units;
 import frc.robot.Constants;
-import frc.robot.Subsystems.Angler;
-import frc.robot.Subsystems.Shooter;
+import frc.robot.subsystems.Angler;
+import frc.robot.subsystems.Shooter;
 import frc.team5431.titan.core.misc.Logger;
 
 /**

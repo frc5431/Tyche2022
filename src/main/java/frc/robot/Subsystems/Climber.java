@@ -1,4 +1,4 @@
-package frc.robot.Subsystems;
+package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.InvertType;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.revrobotics.CANSparkMax;
@@ -8,8 +8,8 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
-import frc.robot.Subsystems.Climber.ClimberBase.ClimberExtend;
-import frc.robot.Subsystems.Climber.ClimberBase.ClimberHinge;
+import frc.robot.subsystems.Climber.ClimberBase.ClimberExtend;
+import frc.robot.subsystems.Climber.ClimberBase.ClimberHinge;
 
 import static java.lang.Math.max;
 import static java.lang.Math.min;

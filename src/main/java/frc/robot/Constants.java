@@ -41,6 +41,16 @@ public class Constants {
     public static final double CAMERA_HEIGHT_METERS = 0;
     public static final double TARGET_HEIGHT_METERS = 0;
     public static final double CAMERA_PITCH_RADIANS = 0;
+    public static final int ID_FEEDER_BOTTOM = 0;
+    public static final int ID_FEEDER_TOP = 0;
+    public static final int ID_SHOOTER_LEFT = 0;
+    public static final int ID_SHOOTER_RIGHT = 0;
+    public static final int ID_INTAKE = 0;
+    public static final int ID_PIVOT = 0;
+    public static final int ID_CLIMBER_EXTEND = 0;
+    public static final int ID_CLIMBER_HINGE = 0;
+    public static final int SLOT_ANGLER = 0;
+    public static final int SLOT_FEEDER_SENSOR = 0;
 
     }
 
