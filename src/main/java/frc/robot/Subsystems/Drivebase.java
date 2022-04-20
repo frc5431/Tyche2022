@@ -2,6 +2,8 @@ package frc.robot.subsystems;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
+import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -43,4 +45,13 @@ public class Drivebase extends TimedRobot {
     m_rightMotor1.set(driver.getRawAxis(Xbox.Axis.RIGHT_Y));
   
   }
+
+  public void stop() {
+  }
+
+public void driveRaw(ChassisSpeeds chassisSpeeds) {
+}
+
+public void driveRelative(Double left, Double middle, Boolean right) {
+}
 }

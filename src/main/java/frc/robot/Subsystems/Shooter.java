@@ -14,7 +14,35 @@ import frc.robot.Constants;
    */
 
 public class Shooter extends SubsystemBase  {
-    public static final double VELOCITY_NORMAL = 0;
+    
+    public static final double VELOCITY_REJECT = 6892;//TBD
+    public static final double VELOCITY_NORMAL = 0; //TBD
+    public static final double VELOCITY_BUFFER = 100;//TBD
+
+    public static final double MAX_VELOCITY = 21350; // theoretical 21800
+
+    public static final NeutralMode NEUTRALMODE = NeutralMode.Coast;
+    public static final boolean REVERSE = true;
+    public static final double RAMPING_FROM_0_TO_FULL = 0.3;
+
+    private static final double DEFAULT_KP = 0.12;
+    private static final double DEFAULT_KI = 0;
+    private static final double DEFAULT_KD = 0;
+    private static final double DEFAULT_KF = 0.05; // 0.055
+
+    public static enum Velocity {
+        OFF(0), REJECT(VELOCITY_REJECT), NORMAL(VELOCITY_NORMAL);
+
+        private double velocity;
+
+        Velocity(double velocity) {
+            this.velocity = velocity;
+        }
+
+        public double getVelocity() {
+            return velocity;
+        }
+    }
     private WPI_TalonFX shooter, shooterFollow;
 
     public Shooter(WPI_TalonFX left, WPI_TalonFX right) {
@@ -43,6 +71,15 @@ public class Shooter extends SubsystemBase  {
         shooter.config_kF(0, Constants.KF);
         shooterFollow.config_kF(0, Constants.KF);
         }
+
+    public class Velocity {
+    }
+
+    public void set(Velocity off) {
+    }
+
+    public void set(double asDouble) {
+    }
     
     }
 

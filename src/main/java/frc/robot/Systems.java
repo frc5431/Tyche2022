@@ -26,5 +26,13 @@ public class Systems {
         return null;
     }
 
+    public Shooter getShooter() {
+        return null;
+    }
+
+    public Drivebase getDrivebase() {
+        return null;
+    }
+
 }
 
