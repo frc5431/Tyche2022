@@ -1,4 +1,4 @@
-package frc.robot.commands;
+/**package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import frc.robot.Constants;
 import frc.robot.Systems;
@@ -14,9 +14,10 @@ public class StopAllCommand extends ParallelCommandGroup {
             new FeederTopCommand(systems, 0),
             new ShooterCommand(systems, Shooter.VELOCITY_NORMAL),
             new DriveCommand(systems, 0, 0, 0),
-            new ClimberExtendCommand(systems, 0),
-            new ClimberHingeCommand(systems, 0),
-            new PivotCommand(systems, 0)
+            new ClimberExtendCommand(systems, 0)
+         //   new ClimberHingeCommand(systems, 0),
+           // new PivotCommand(systems, 0)
         );
     }
 }
+*/

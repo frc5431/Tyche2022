@@ -1,4 +1,5 @@
 package frc.robot;
+
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 import org.photonvision.PhotonCamera;
@@ -7,33 +8,61 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Servo;
 import frc.robot.subsystems.*;
 
-import com.revrobotics.CANSparkMax;
-
 public class Systems {
+    private WPI_TalonFX shooterLeft;
+    private WPI_TalonFX shooterRight;
 
-    public Angler getAngler() {
-        return null;
-    }
+    private Servo anglerServo;
+    private Drivebase drivebase;
 
-    public Feeder getFeeder() {
-        return null;
-    }
+    private Feeder feeder;
+    private Shooter shooter;
+    private Intake intake;
+    private Pivot pivot;
+    private Climber climber;
+    private Angler angler;
 
-    public DigitalInput getUpperFeederSensor() {
-        return null;
-    }
+    private PhotonCamera camera;
 
-    public Intake getIntake() {
-        return null;
-    }
+  //  private Blinkin led;
 
-    public Shooter getShooter() {
-        return null;
+    public Systems() {
+
+        drivebase = new Drivebase();
+
+        shooter = new Shooter(shooterLeft, shooterRight);
+        angler = new Angler(anglerServo);
     }
 
     public Drivebase getDrivebase() {
-        return null;
+        return drivebase;
     }
 
-}
+    public Feeder getFeeder() {
+        return feeder;
+    }
 
+    public Shooter getShooter() {
+        return shooter;
+    }
+
+    public Intake getIntake() {
+        return intake;
+    }
+
+    public Pivot getPivot() {
+        return pivot;
+    }
+
+    public Climber getClimber() {
+        return climber;
+    }  
+
+    public Angler getAngler() {
+        return angler;
+    }
+
+    public PhotonCamera getCamera() {
+        return camera;
+    }
+}

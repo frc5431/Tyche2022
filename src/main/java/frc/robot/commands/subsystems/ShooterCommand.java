@@ -42,13 +42,13 @@ public class ShooterCommand extends CommandBase {
 
     @Override
     public void execute() {
-        shooter.set(velocitySupplier.getAsDouble());
+    //    shooter.set(velocitySupplier.getAsDouble());
     }
 
     @Override
     public void end(boolean interrupted) {
 		Logger.l("Shooter Command Done");
-		shooter.set(Shooter.Velocity.OFF);
+	//	shooter.set(Shooter.Velocity.OFF);
 	}
 	
 	@Override

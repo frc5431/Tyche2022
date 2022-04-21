@@ -39,23 +39,7 @@ public class DriveCommand extends CommandBase {
     public void initialize() {
         Logger.l("Drive Command Starting");
     }
-
-    @Override
-    public void execute() {
-        if (fieldRelative != null) {
-            Logger.l("Driving field-relative! %s", fieldRelative);
-            drivebase.driveRaw(new ChassisSpeeds(fieldRelative.getLeft(), fieldRelative.getMiddle(), fieldRelative.getRight()));
-        } else if (robotRelative != null) {
-            Logger.l("Driving robot-relative! %s", robotRelative);
-            drivebase.driveRelative(robotRelative.getLeft(), robotRelative.getMiddle(), robotRelative.getRight());
-        } else {
-            Logger.e("Drive Command has no valid values!");
-        }
-    }
-
-    @Override
-    public void end(boolean interrupted) {
-        Logger.l("Drive Command Ending");
-        drivebase.stop();
-    }
+    
 }
+
+ 

@@ -72,14 +72,6 @@ public class Shooter extends SubsystemBase  {
         shooterFollow.config_kF(0, Constants.KF);
         }
 
-    public class Velocity {
-    }
-
-    public void set(Velocity off) {
-    }
-
-    public void set(double asDouble) {
-    }
     
     }
 
