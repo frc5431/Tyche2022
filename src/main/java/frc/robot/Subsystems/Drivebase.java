@@ -31,6 +31,9 @@ public class Drivebase extends SubsystemBase {
   public void driveController(double left, double right) {
     m_leftMotor1.set(left);
     m_rightMotor1.set(right);
+
+    
+    System.out.println ("Debug Drivebase");
   }
   
 

@@ -3,11 +3,14 @@ package frc.robot.commands.subsystems;
 import java.util.function.DoubleSupplier;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Systems;
 import frc.robot.subsystems.Drivebase;
 import frc.team5431.titan.core.misc.Logger;
 
+
 public class DefaultDriveCommand extends CommandBase {
     private final Drivebase m_drivetrainSubsystem;
+    
 
     private final DoubleSupplier m_leftSupplier;
     private final DoubleSupplier m_rightSupplier;
@@ -35,5 +38,7 @@ public class DefaultDriveCommand extends CommandBase {
                         m_rightSupplier.getAsDouble()
                 );
     
+    System.out.println ("Debug Drive Command");
+
     }
 }

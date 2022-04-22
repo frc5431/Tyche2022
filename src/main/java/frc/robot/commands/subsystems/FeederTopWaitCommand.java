@@ -9,7 +9,6 @@ import frc.team5431.titan.core.misc.Logger;
 
 public class FeederTopWaitCommand extends CommandBase {
         private final Feeder feeder;
-        private final DigitalInput dio;
         private final boolean reverse;
         private final double speed;
     
@@ -23,7 +22,6 @@ public class FeederTopWaitCommand extends CommandBase {
     
         public FeederTopWaitCommand(Systems systems, double speed, boolean reverse) {
             this.feeder = systems.getFeeder();
-            this.dio = systems.getUpperFeederSensor();
             this.reverse = reverse;
             this.speed = speed;
     
@@ -40,10 +38,7 @@ public class FeederTopWaitCommand extends CommandBase {
         
         @Override
         public void execute() {
-            if (dio.get())
                 feeder.setTop(reverse ? -speed : speed);
-            else
-                feeder.setTop(0);
         }
     
         @Override
