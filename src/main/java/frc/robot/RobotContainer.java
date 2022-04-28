@@ -29,7 +29,6 @@ public class RobotContainer {
   //private final Joystick vjoy = new vjoy(4);
     private final Xbox buttonController = new Xbox(1);
     private final LogitechExtreme3D operator = new LogitechExtreme3D(2);
-    
 
     //private final SendableChooser<AutonCommand.State> autonChooser;
 
@@ -61,20 +60,20 @@ public class RobotContainer {
     private void configureButtonBindings() {
     }
 
-    private static double deadband(double value, double deadband) {
+    private static double deadband(double value, double deadband) { 
         if (Math.abs(value) > deadband) {
             if (value > 0.0) {
                 return (value - deadband) / (1.0 - deadband);
             } else {
                 return (value + deadband) / (1.0 - deadband);
             }
-        } else {
+        } else { 
             return 0.0;
+            }
         }
-    }
-
+        
     private static double modifyAxis(double value) {
-        // Deadband
+        //Deadband 
         value = deadband(value, 0.075);
 
         value = value * value * value;
@@ -83,9 +82,9 @@ public class RobotContainer {
         // value = Math.copySign(value * value, value);
 
         return value;
+    }
 
         
     }
-}
 
      
