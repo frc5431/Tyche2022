@@ -6,6 +6,7 @@ package frc.robot;
 
 import org.photonvision.PhotonCamera;
 
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.commands.subsystems.DefaultDriveCommand;
 import frc.robot.subsystems.Drivebase;
 import frc.team5431.titan.core.joysticks.LogitechExtreme3D;
@@ -82,6 +83,10 @@ public class RobotContainer {
         // value = Math.copySign(value * value, value);
 
         return value;
+    }
+
+    public Command getAutonomousCommand() {
+        return null;
     }
 
         

@@ -22,7 +22,7 @@ public class Drivebase extends SubsystemBase {
   
     m_rightMotor1.setInverted(true);
     m_rightMotor2.follow(m_rightMotor1);
-    m_leftMotor1.setInverted(true);
+    m_leftMotor1.setInverted(false);
     m_leftMotor2.follow(m_leftMotor1);
   }
 
@@ -31,7 +31,7 @@ public class Drivebase extends SubsystemBase {
     m_rightMotor1.set(right);
 
     
-    System.out.println ("Debug Drivebase");
+    // System.out.println ("Debug Drivebase");
   }
   
 
