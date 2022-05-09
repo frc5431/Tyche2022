@@ -35,7 +35,7 @@ public class Drivebase extends SubsystemBase {
   }
   
   public void driveArcade(double forward, double turn) {
-    m_myRobot.arcadeDrive(forward, turn);
+    m_myRobot.curvatureDrive(forward, turn, true);
   }
 
 }
