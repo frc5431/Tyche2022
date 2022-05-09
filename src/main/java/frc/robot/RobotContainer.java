@@ -43,7 +43,7 @@ public class RobotContainer {
         drivebase.setDefaultCommand(new DefaultDriveCommand(
             drivebase,
             () -> modifyAxis(-driver.getRawAxis(Xbox.Axis.LEFT_Y)),
-            () -> modifyAxis(-driver.getRawAxis(Xbox.Axis.RIGHT_Y))
+            () -> modifyAxis(-driver.getRawAxis(Xbox.Axis.LEFT_X))
 ));
 
 
