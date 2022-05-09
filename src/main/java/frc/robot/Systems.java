@@ -30,8 +30,8 @@ public class Systems {
 
         drivebase = new Drivebase();
 
-        shooter = new Shooter(shooterLeft, shooterRight);
-        angler = new Angler(anglerServo);
+        // shooter = new Shooter(shooterLeft, shooterRight);
+        // angler = new Angler(anglerServo);
     }
 
     public Drivebase getDrivebase() {
