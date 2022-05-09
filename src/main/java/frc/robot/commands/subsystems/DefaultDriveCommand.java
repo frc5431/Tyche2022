@@ -32,12 +32,13 @@ public class DefaultDriveCommand extends CommandBase {
     @Override
     public void execute() {
         // You can use `new ChassisSpeeds(...)` for robot-oriented movement instead of field-oriented movement
-        m_drivetrainSubsystem.driveController(
-                        m_leftSupplier.getAsDouble(),
-                        m_rightSupplier.getAsDouble()
-                );
-    
-    // System.out.println ("Debug Drive Command");
+
+        // m_drivetrainSubsystem.driveController(
+        //                 m_leftSupplier.getAsDouble(),
+        //                 m_rightSupplier.getAsDouble()
+        //         );
+        
+        m_drivetrainSubsystem.driveArcade(m_leftSupplier.getAsDouble(), m_rightSupplier.getAsDouble());
 
     }
 }

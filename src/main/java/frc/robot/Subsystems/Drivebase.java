@@ -24,16 +24,18 @@ public class Drivebase extends SubsystemBase {
     m_rightMotor2.follow(m_rightMotor1);
     m_leftMotor1.setInverted(false);
     m_leftMotor2.follow(m_leftMotor1);
+
+    m_myRobot = new DifferentialDrive(m_leftMotor1, m_rightMotor1);
   }
 
   public void driveController(double left, double right) {
-    m_leftMotor1.set(left);
-    m_rightMotor1.set(left);
+    m_myRobot.tankDrive(left, right);
 
-    
     // System.out.println ("Debug Drivebase");
   }
   
-
+  public void driveArcade(double forward, double turn) {
+    m_myRobot.arcadeDrive(forward, turn);
+  }
 
 }
