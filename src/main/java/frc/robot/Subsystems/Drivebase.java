@@ -24,8 +24,6 @@ public class Drivebase extends SubsystemBase {
     m_rightMotor2.follow(m_rightMotor1);
     m_leftMotor1.setInverted(true);
     m_leftMotor2.follow(m_leftMotor1);
-
-
   }
 
   public void driveController(double left, double right) {
