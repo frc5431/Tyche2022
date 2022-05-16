@@ -8,9 +8,13 @@ import org.photonvision.PhotonCamera;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.commands.subsystems.DefaultDriveCommand;
+import frc.robot.commands.subsystems.PivotCommand;
 import frc.robot.subsystems.Drivebase;
+import frc.robot.subsystems.Pivot;
 import frc.team5431.titan.core.joysticks.LogitechExtreme3D;
 import frc.team5431.titan.core.joysticks.Xbox;
+import frc.team5431.titan.core.joysticks.utils.CompassPOV;
+import frc.team5431.titan.core.joysticks.Xbox.Button;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -22,6 +26,7 @@ public class RobotContainer {
     // The robot's subsystems and commands are defined here...
     private final Systems systems = new Systems();
     private final Drivebase drivebase = systems.getDrivebase();
+    private final Pivot pivot = systems.getPivot();
    private final PhotonCamera camera = systems.getCamera();
 
 //     private final PowerDistribution pdh = new PowerDistribution();
@@ -87,6 +92,17 @@ public class RobotContainer {
 
     public Command getAutonomousCommand() {
         return null;
+
+                
+        // Pivot Up
+        // new JoystickButton(buttonBoard, 5)
+      buttonController.getButton(CompassPOV.NORTH)
+                .whileHeld(new PivotCommand(systems, false));
+        
+        // Pivot Down
+        // new JoystickButton(buttonBoard, 2)
+      buttonController.getButton(CompassPOV.SOUTH)
+                .whileHeld(new PivotCommand(systems, true));
     }
 
         
